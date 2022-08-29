@@ -1,8 +1,12 @@
+import React from "react";
+import {Field, Form, FormikValues} from "formik";
 import './styles.scss';
-import {Field, Form} from "formik";
 
-const SecondQuestion = ({values}) => {
+interface ISecondQuestion {
+    values: FormikValues
+}
 
+const SecondQuestion: React.FC<ISecondQuestion> = ({values}) => {
     return (
         <Form className='secondQ'>
             <h3>Choose your favorite anime</h3>

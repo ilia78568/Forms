@@ -1,7 +1,13 @@
-import {Field, Form} from "formik";
+import React from "react";
+import {Field, Form, FormikValues} from "formik";
 import './styles.scss';
 
-const FirstQuestion = ({changeQ, values}) => {
+interface IFirstQuestion {
+    changeQ: () => void;
+    values: FormikValues
+}
+
+const FirstQuestion: React.FC<IFirstQuestion> = ({changeQ, values}) => {
     return (
         <section className="firstQ">
             <Form>
@@ -25,7 +31,13 @@ const FirstQuestion = ({changeQ, values}) => {
                     </label>
                 </div>
             </Form>
-            <button disabled={!values.checked.length} className={`button ${!values.checked.length && 'disabledBtn'}`} onClick={changeQ}>Next question</button>
+            <button
+                disabled={!values.checked.length}
+                className={`button ${!values.checked.length && 'disabledBtn'}`}
+                onClick={changeQ}
+            >
+                Next question
+            </button>
         </section>
     )
 }

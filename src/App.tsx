@@ -1,10 +1,9 @@
-import './App.css';
 import ReactHookForm from "./components/ReactHookForm/ReactHookForm";
 import ReactFormik from "./components/ReactFormik/ReactFormik";
 
+import './App.css';
 
 function App() {
-
   return (
     <div className="App">
         <h1 style={{color: 'white'}}>ReactHookForm</h1>

@@ -7,7 +7,6 @@ import SecondQuestion from "./SecondQuestion/SecondQuestion";
 import './styles.scss';
 
 const ReactFormik = () => {
-
     const [isFirstQ,setIsFirstQ] = useState(true)
 
     return (
@@ -21,26 +20,23 @@ const ReactFormik = () => {
                     alert(`Ты любишь кушать ${values.checked.join(', ')} и смотреть аниме ${values.anime}`)
                 }}
             >
-                {({ values, handleReset }) => {
-
+                {({ values, errors, isValidating }) => {
                     const changeQ = () => {
                         if(values.checked.length) {
                             setIsFirstQ(false)
                         }
                     }
-
                     return (
                         <>
                             {isFirstQ ?
                                 <FirstQuestion values={values} changeQ={changeQ} /> :
-                                <SecondQuestion values={values} setIsFirstQ={setIsFirstQ}/>
+                                <SecondQuestion values={values}/>
                             }
                         </>
                     )
                 }}
             </Formik>
         </div>
-
     )
 }
 
